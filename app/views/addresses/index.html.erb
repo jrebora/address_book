@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Addresses" %>
+
+<h1>Addresses</h1>
+
+<div class="table-responsive small">
+  <table class="table table-striped table-sm">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Street</th>
+      <th scope="col">City</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @addresses.each do |address| %>
+        <%= render address %>
+        <p>
+          <%= link_to "Show this address", address %>
+        </p>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New address", new_address_path %>
